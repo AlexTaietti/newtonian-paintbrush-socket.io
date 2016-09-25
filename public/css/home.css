@@ -1,0 +1,107 @@
+@import url(/css/general.css);
+.o-container {
+  display: block;
+  position: relative; }
+
+.c-home-wrapper {
+  text-align: center;
+  margin: 0;
+  height: 100%;
+  background-color: #e91e63;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  -webkit-transform: translate(0, 0);
+          transform: translate(0, 0);
+  z-index: 9999; }
+  .c-home-wrapper__content {
+    display: inline-block;
+    vertical-align: middle; }
+    .c-home-wrapper__content__title {
+      font-size: 8.5rem;
+      font-family: 'Slabo 27px', serif;
+      color: white;
+      margin: 0;
+      margin-bottom: 15px;
+      white-space: nowrap;
+      text-shadow: 1px 1px 2px grey;
+      -webkit-perspective: 200px;
+              perspective: 200px; }
+      .c-home-wrapper__content__title span {
+        -webkit-transition: all .5s;
+        transition: all .5s;
+        display: inline-block;
+        -webkit-transform: rotateY(0deg);
+                transform: rotateY(0deg); }
+    .c-home-wrapper__content:hover .c-home-wrapper__content__title > span:nth-of-type(1) {
+      -webkit-transition-delay: 0.03s;
+              transition-delay: 0.03s; }
+    .c-home-wrapper__content:hover .c-home-wrapper__content__title > span:nth-of-type(2) {
+      -webkit-transition-delay: 0.06s;
+              transition-delay: 0.06s; }
+    .c-home-wrapper__content:hover .c-home-wrapper__content__title > span:nth-of-type(3) {
+      -webkit-transition-delay: 0.09s;
+              transition-delay: 0.09s; }
+    .c-home-wrapper__content:hover .c-home-wrapper__content__title > span:nth-of-type(4) {
+      -webkit-transition-delay: 0.12s;
+              transition-delay: 0.12s; }
+    .c-home-wrapper__content:hover .c-home-wrapper__content__title > span:nth-of-type(5) {
+      -webkit-transition-delay: 0.15s;
+              transition-delay: 0.15s; }
+    .c-home-wrapper__content:hover .c-home-wrapper__content__title > span:nth-of-type(6) {
+      -webkit-transition-delay: 0.18s;
+              transition-delay: 0.18s; }
+    .c-home-wrapper__content:hover .c-home-wrapper__content__title > span:nth-of-type(7) {
+      -webkit-transition-delay: 0.21s;
+              transition-delay: 0.21s; }
+    .c-home-wrapper__content:hover .c-home-wrapper__content__title > span:nth-of-type(8) {
+      -webkit-transition-delay: 0.24s;
+              transition-delay: 0.24s; }
+    .c-home-wrapper__content:hover .c-home-wrapper__content__title > span {
+      -webkit-transform: rotateY(360deg);
+              transform: rotateY(360deg); }
+    .c-home-wrapper__content .c-home-wrapper__content__title > span:nth-of-type(8) {
+      -webkit-transition-delay: 0.03s;
+              transition-delay: 0.03s; }
+    .c-home-wrapper__content .c-home-wrapper__content__title > span:nth-of-type(7) {
+      -webkit-transition-delay: 0.06s;
+              transition-delay: 0.06s; }
+    .c-home-wrapper__content .c-home-wrapper__content__title > span:nth-of-type(6) {
+      -webkit-transition-delay: 0.09s;
+              transition-delay: 0.09s; }
+    .c-home-wrapper__content .c-home-wrapper__content__title > span:nth-of-type(5) {
+      -webkit-transition-delay: 0.12s;
+              transition-delay: 0.12s; }
+    .c-home-wrapper__content .c-home-wrapper__content__title > span:nth-of-type(4) {
+      -webkit-transition-delay: 0.15s;
+              transition-delay: 0.15s; }
+    .c-home-wrapper__content .c-home-wrapper__content__title > span:nth-of-type(3) {
+      -webkit-transition-delay: 0.18s;
+              transition-delay: 0.18s; }
+    .c-home-wrapper__content .c-home-wrapper__content__title > span:nth-of-type(2) {
+      -webkit-transition-delay: 0.21s;
+              transition-delay: 0.21s; }
+    .c-home-wrapper__content .c-home-wrapper__content__title > span:nth-of-type(1) {
+      -webkit-transition-delay: 0.24s;
+              transition-delay: 0.24s; }
+  .c-home-wrapper::before {
+    content: '';
+    height: 100%;
+    display: inline-block;
+    vertical-align: middle; }
+  .c-home-wrapper.hidden {
+    -webkit-transform: translate(-100%, 0);
+            transform: translate(-100%, 0); }
+
+.c-gravity {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; }
+  .c-gravity > canvas {
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0; }

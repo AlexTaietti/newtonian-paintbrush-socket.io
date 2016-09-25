@@ -1,0 +1,23 @@
+extends ./layout/app.jade
+
+block styles
+	link(rel="stylesheet" type="text/css" href="/css/controller.css")
+
+block content
+	.c-controller Tilt to control the star!
+
+block scripts
+	script(src="/socket.io/socket.io.js")
+	script.
+
+		//connect to socket.io server
+		var socket = io.connect('http://#{host}:#{port}/#{id}');
+
+		//on tilt send accelerometer's data to server
+		window.addEventListener('deviceorientation', function(e){
+			var orientation = {
+				x: Math.round(e.beta) * 0.6,
+				y: Math.round(e.gamma) * 0.6
+			}
+			socket.emit('tilt', orientation);
+		});

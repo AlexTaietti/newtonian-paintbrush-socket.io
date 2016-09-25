@@ -1,0 +1,25 @@
+{
+  "name": "newtonian-paintbrush(socket.io)",
+  "version": "1.0.0",
+  "description": "playing around with socket.io",
+  "main": "index.js",
+  "scripts": {
+    "watch": "nodemon server -e js,jade",
+    "start": "node server"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "jade": "^1.11.0",
+    "my-local-ip": "^1.0.0",
+    "socket.io": "^1.4.8"
+  },
+  "devDependencies": {
+    "babel-preset-es2015": "^6.14.0",
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.1",
+    "gulp-babel": "^6.1.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-watch": "^4.3.9"
+  }
+}

@@ -1,0 +1,70 @@
+extends ./layout/app.jade
+
+block styles
+	link(rel="stylesheet" type="text/css" href="/css/home.css")
+
+block content
+	.o-container.c-home-wrapper
+		.c-home-wrapper__content
+			div.c-home-wrapper__content__title
+				span S
+				span c
+				span a
+				span n
+				span &nbsp;
+				span m
+				span e
+				span !
+			img(src='https://chart.googleapis.com/chart?chs=300x300&cht=qr&chl=http://#{host}:#{port}/#{id}&choe=UTF-8')
+	.o-container.c-gravity
+		canvas.c-gravity__trails
+		canvas.c-gravity__particles
+
+
+block scripts
+	script(src="/socket.io/socket.io.js")
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/dat-gui/0.6.0/dat.gui.min.js")
+	script(src="/js/main.js")
+	script.
+		
+		//connect to the socket.io room
+		var socket = io.connect('http://#{host}:#{port}/#{id}');
+
+		//get QR panel to hide/show
+		var home = document.querySelector('.c-home-wrapper');
+
+		//animating flag
+		var animating = false;
+
+		//when a controller connects to socket.io room start animation and hide QR panel
+		socket.on('connected', function () {
+			if(!animating){
+		        animating = true;
+				home.classList.add('hidden');
+				animate();
+			}
+		});
+
+		//when controller disconnects show QR panel again and cancel animation frame id
+		socket.on('disconnected', function(){
+			if(animating){
+		        animating = false;
+				home.classList.remove('hidden');
+				cancelAnimationFrame(animationFrame);
+			}
+		});
+
+		//this event is triggered by the controller tilting and uses the accelerometer's data to update the mobileX and mobileY variables
+		socket.on('moveStar', function(data){
+			if(animating){
+				//verlet to determine star's velocity given its position (also makes star move more smoothly than euler)
+				var newPoint = {
+					x: mobileX + data.x,
+					y: mobileY - data.y
+				}
+				star.v.x = newPoint.x - mobileX;
+				star.v.y = newPoint.y - mobileY;
+				mobileX += data.x;
+				mobileY += data.y;
+			}
+		});
