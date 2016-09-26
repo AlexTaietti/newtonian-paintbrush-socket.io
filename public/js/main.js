@@ -329,6 +329,20 @@ function animate() {
 
 	//update star's position and render it
 	star.update();
+	if (settings.BOUNDS) {
+		if (star.x > cW - star.radius) {
+			star.x = cW - star.radius;star.v.x = 0;
+		}
+		if (star.x < 0 + star.radius) {
+			star.x = 0 + star.radius;star.v.x = 0;
+		}
+		if (star.y > cH - star.radius) {
+			star.y = cH - star.radius;star.v.y = 0;
+		}
+		if (star.y < 0 + star.radius) {
+			star.y = 0 + star.radius;star.v.y = 0;
+		}
+	}
 	star.render(settings.PARTICLE_CTXT);
 
 	//update and render other particles
